@@ -124,11 +124,11 @@ $('#choices').on('click', '#option', function() {
 		//This re-populates the emptied elements
 			$('.topic-name').html(feedback1);
 			$('.question-content').text(qbank[questionNum].correctDetails);
-			$('#question-timer .col-xs-1').html("<i class='fa fa-check-circle-o fa-4x'></i>");
+			$('#question-timer .col-xs-1').html("<i class='fa fa-check-circle-o fa-4x text-success'></i>");
 			
 		//This updates the score icons
 
-			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+')').replaceWith("<span><i class='fa fa-check-square-o'></i></span>");
+			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+')').replaceWith("<span><i class='fa fa-check-square-o text-success'></i></span>");
 		
 		//Check whether quiz is finished
 		//Final question correct
@@ -144,14 +144,16 @@ $('#choices').on('click', '#option', function() {
 
 			$('#question-timer > div > div.col-xs-11 > h3').html("Game Over!");
 			$('#question-timer > div > div.col-xs-11 > h4').html("You scored "+correctTotal+"/"+questionTotal+".");
-			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+')').replaceWith("<span><i class='fa fa-check-square-o'></i></span>");
+			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+')').replaceWith("<span><i class='fa fa-check-square-o text-success'></i></span>");
 			} else {
 			questionNum++;
 			setTimeout(function(){
 			qadisplay();
 			}, 7000);
 			}
+
 	//Initial question wrong
+
 	} else {
 		var feedback2 = "Sorry "+answer+" is wrong!";
 		
@@ -165,11 +167,11 @@ $('#choices').on('click', '#option', function() {
 			
 			$('.question-content').text(qbank[questionNum].correctDetails);
 			$('.topic-name').html(feedback2);
-			$('#question-timer .col-xs-1').html("<i class='fa fa-times-circle-o fa-4x'></i>");
+			$('#question-timer .col-xs-1').html("<i class='fa fa-times-circle-o fa-4x text-danger'></i>");
 
 		//This updates the score icons
 
-			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+') > i').replaceWith("<span><i class='fa fa-square'></i></span>");
+			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+') > i').replaceWith("<span><i class='fa fa-square text-danger'></i></span>");
 		
 		//Check whether quiz is finished
 		//Final question wrong
@@ -185,7 +187,7 @@ $('#choices').on('click', '#option', function() {
 
 			$('#question-timer > div > div.col-xs-11 > h3').html("Game Over!");
 			$('#question-timer > div > div.col-xs-11 > h4').html("You scored "+correctTotal+"/"+questionTotal+".");
-			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+') > i').replaceWith("<span><i class='fa fa-square'></i></span>");
+			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+') > i').replaceWith("<span><i class='fa fa-square text-danger'></i></span>");
 			} else {
 			questionNum++;
 			setTimeout(function(){
