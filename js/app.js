@@ -117,15 +117,17 @@ $('#choices').on('click', '#option', function() {
 			correctTotal++;
 		
 		//This empties the right answer
+
 			$('.topic-name').empty();
 			$('.question-content').empty();					
 			$('#choices').empty();
 
 		//This re-populates the emptied elements
+
 			$('.topic-name').html(feedback1);
 			$('.question-content').text(qbank[questionNum].correctDetails);
 			$('#question-timer .col-xs-1').html("<i class='fa fa-check-circle-o fa-4x text-success'></i>");
-			
+
 		//This updates the score icons
 
 			$('#score-share > div > div:nth-child(1) > span:nth-child('+(questionNum+2)+')').replaceWith("<span><i class='fa fa-check-square-o text-success'></i></span>");
@@ -202,6 +204,7 @@ function qadisplay() {
 	
 	//This empties the existing question and choices
 
+	$('#question-timer .col-xs-1').empty();
 	$('.topic-name').empty();
 	$('.question-content').empty();
 	$('#choices').empty();
